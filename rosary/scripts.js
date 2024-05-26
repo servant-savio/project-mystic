@@ -2,13 +2,13 @@ let showDebug = false;
 let debugDiv = null;
 
 document.addEventListener('DOMContentLoaded', function() {
-  const localShowDebug = localStorage.getItem("showDebug");
-  debugDiv = document.getElementById("debugDiv");
+  const localShowDebug = sessionStorage.getItem("showDebug");
   if (localShowDebug == null) {
-    localStorage.setItem("showDebug", showDebug);
+    sessionStorage.setItem("showDebug", showDebug);
   } else {
     showDebug = localShowDebug;
   }
+  debugDiv = document.getElementById("debugDiv");
 
   const touchstart = {X:0, Y:0};
   const touchend = {X:0, Y:0};
