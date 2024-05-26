@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const localShowDebug = localStorage.getItem("showDebug");
   debugDiv = document.getElementById("debugDiv");
   if (localShowDebug == null) {
-    localStorage.setItem(showDebug)
+    localStorage.setItem("showDebug", showDebug);
   } else {
     showDebug = localShowDebug;
   }
