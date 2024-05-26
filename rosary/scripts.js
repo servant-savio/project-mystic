@@ -1,13 +1,15 @@
-let showDebug = false;
+let showDebug = true;
+let debugDiv = null;
 
 document.addEventListener('DOMContentLoaded', function() {
   const localShowDebug = localStorage.getItem("showDebug");
+  debugDiv = document.getElementById("debugDiv");
   if (localShowDebug == null) {
     localStorage.setItem(showDebug)
   } else {
     showDebug = localShowDebug;
   }
-  
+
   const touchstart = {X:0, Y:0};
   const touchend = {X:0, Y:0};
 
@@ -26,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function handleGesture() {
-    const debugDiv = document.getElementById("debugDiv");
     let nextId, prevId;
     const XorY = isXorY(touchstart.X, touchend.X, touchstart.Y, touchend.Y);
     nextId = `next${XorY}`;
