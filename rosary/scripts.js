@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     showDebug = localShowDebug;
   }
-  
+
   showDebug = false;
   debugDiv = document.getElementById("debugDiv");
 
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
             window.location.href = nextLink.href;
         }
     } else if (currentTouchend > currentTouchstart) {
-        debugDiv.innerHTML = `${debugDiv.innerText} <br>currentTouchend > currentTouchstart`;
+        addDebug(`${debugDiv.innerText} <br>currentTouchend > currentTouchstart`);
         const prevLink = document.getElementById(prevId);
         if (prevLink) {
             window.location.href = prevLink.href;
