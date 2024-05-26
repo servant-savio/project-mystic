@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function handleGesture() {
+    const debugDiv = document.getElementById("debugDiv");
     let nextId, prevId;
     const XorY = isXorY(touchstart.X, touchend.X, touchstart.Y, touchend.Y);
     nextId = `next${XorY}`;
@@ -16,12 +17,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentTouchstart = touchstart[XorY]; 
     const currentTouchend = touchend[XorY]; 
 
+    debugDiv.innerHTML = `${debugDiv.innerText} XorY: ${XorY}, nextId: ${nextId}, prevId: ${prevId}`;
+    debugDiv.innerHTML = `${debugDiv.innerText} <br>currentTouchstart: ${currentTouchstart}, currentTouchend: ${currentTouchend}`;
+
     if (currentTouchend < currentTouchstart) {
+        debugDiv.innerHTML = `${debugDiv.innerText} <br>currentTouchend < currentTouchstart`;
         const nextLink = document.getElementById(nextId);
         if (nextLink) {
             window.location.href = nextLink.href;
         }
     } else if (currentTouchend > currentTouchstart) {
+        debugDiv.innerHTML = `${debugDiv.innerText} <br>currentTouchend > currentTouchstart`;
         const prevLink = document.getElementById(prevId);
         if (prevLink) {
             window.location.href = prevLink.href;
