@@ -70,3 +70,7 @@ nav a:hover {
 body {
   font-family: 'Avenir', sans-serif;
 }
+
+.hiddenLink {
+  visibility: hidden;
+}
