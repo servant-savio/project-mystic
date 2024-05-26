@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     showDebug = localShowDebug;
   }
+  
+  showDebug = false;
   debugDiv = document.getElementById("debugDiv");
 
   const touchstart = {X:0, Y:0};
