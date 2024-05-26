@@ -1,4 +1,13 @@
+let showDebug = false;
+
 document.addEventListener('DOMContentLoaded', function() {
+  const localShowDebug = localStorage.getItem("showDebug");
+  if (localShowDebug == null) {
+    localStorage.setItem(showDebug)
+  } else {
+    showDebug = localShowDebug;
+  }
+  
   const touchstart = {X:0, Y:0};
   const touchend = {X:0, Y:0};
 
@@ -6,6 +15,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const deltaX = Math.abs(startX - endX);
     const deltaY = Math.abs(startY - endY);
     return (deltaX > deltaY) ? "X" : "Y";
+  }
+
+  /* addDebug - useful for phone where you can't access console logs. */
+
+  function addDebug(debugText) {
+    if (showDebug) {
+        debugDiv.innerHTML = `${debugDiv.innerText}<br/>${debugText}`;
+    }
   }
 
   function handleGesture() {
@@ -17,11 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentTouchstart = touchstart[XorY]; 
     const currentTouchend = touchend[XorY]; 
 
-    debugDiv.innerHTML = `${debugDiv.innerText} XorY: ${XorY}, nextId: ${nextId}, prevId: ${prevId}`;
-    debugDiv.innerHTML = `${debugDiv.innerText} <br>currentTouchstart: ${currentTouchstart}, currentTouchend: ${currentTouchend}`;
+    addDebug(`XorY: ${XorY}, nextId: ${nextId}, prevId: ${prevId}`);
+    addDebug(`${debugDiv.innerText} <br>currentTouchstart: ${currentTouchstart}, currentTouchend: ${currentTouchend}`);
 
     if (currentTouchend < currentTouchstart) {
-        debugDiv.innerHTML = `${debugDiv.innerText} <br>currentTouchend < currentTouchstart`;
+        addDebug(`${debugDiv.innerText} <br>currentTouchend < currentTouchstart`);
         const nextLink = document.getElementById(nextId);
         if (nextLink) {
             window.location.href = nextLink.href;
