@@ -1,4 +1,4 @@
-let showDebug = true;
+let showDebug = false;
 let debugDiv = null;
 
 document.addEventListener('DOMContentLoaded', function() {
