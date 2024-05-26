@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function isXorY (startX, endX, startY, endY) {
     const deltaX = Math.abs(startX - endX);
     const deltaY = Math.abs(startY - endY);
-    return (deltaX > deltaY);
+    return (deltaX > deltaY) ? "X" : "Y";
   }
 
   function handleGesture() {
