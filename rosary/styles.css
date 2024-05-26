@@ -25,6 +25,11 @@ nav a {
   border-radius: 4px;
 }
 
+.header-image {
+  max-width: 560px;
+  width: 100%;
+  min-width: 200px;
+}
 .rosary {
   max-width: 800px;
   width: 100%;
