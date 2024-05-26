@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #f8f8f8;
+  padding: 1em;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: #eee;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 0.5em 1em;
+  background-color: #ddd;
+  border-radius: 4px;
+}
+
+img {
+  max-width: 800px;
+  width: 100%;
+  min-width: 100px;
+}
+nav a:hover {
+  background-color: #ccc;
+}
