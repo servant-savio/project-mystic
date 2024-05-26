@@ -30,6 +30,38 @@ img {
   width: 100%;
   min-width: 100px;
 }
+
 nav a:hover {
   background-color: #ccc;
+}
+
+.container {
+  text-align: center;
+}
+
+.unordered-list {
+  list-style-type: disc; /* Default bullet style */
+  margin: 20px;
+  padding: 0;
+}
+
+.unordered-list li {
+  margin: 5px 0;
+}
+
+.mysteries {
+  margin: 100px;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('../fonts/Avenir.woff2') format('woff2'),
+       url('../fonts/Avenir.woff') format('woff'),
+       url('../fonts/Avenir.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Avenir', sans-serif;
 }
